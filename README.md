@@ -1,3 +1,5 @@
-# CourseProject
+# CS410 Spiderman
 
-Please fork this repository and paste the github link of your fork on Microsoft CMT. Detailed instructions are on Coursera under Week 1: Course Project Overview/Week 9 Activities.
+Please click here for the video presentation:
+ Part I: https://youtu.be/0utoLsXVr9Y
+ Part II: https://youtu.be/o_V7v0G5xS8
