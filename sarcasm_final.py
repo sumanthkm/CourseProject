@@ -4,12 +4,10 @@ import numpy as np
 import urllib
 from tensorflow.keras.preprocessing.text import Tokenizer
 from tensorflow.keras.preprocessing.sequence import pad_sequences
-import json
 import tensorflow as tf
 import numpy as np
 import requests
-from tensorflow.keras.preprocessing.text import Tokenizer
-from tensorflow.keras.preprocessing.sequence import pad_sequences
+
 
 def solution_model():
     url = 'http://storage.googleapis.com/download.tensorflow.org/data/sarcasm.json'
@@ -57,7 +55,7 @@ def solution_model():
     # YOUR CODE HERE. KEEP THIS OUTPUT LAYER INTACT OR TESTS MAY FAIL
         tf.keras.layers.Dense(1, activation='sigmoid')
     ])
-    num_epochs = 30
+    num_epochs = 10
     model.compile(loss='binary_crossentropy', optimizer='adam', metrics=['accuracy'])
     model.fit(training_padded, training_labels, epochs=num_epochs,
                         validation_data=(testing_padded, testing_labels), verbose=2)
@@ -96,8 +94,12 @@ if __name__ == '__main__':
     #sentence = "sentence = I really think this is amazing. honest."
 
 
-    sentence = ["paul newman dies after consuming 51 hard-boiled eggs",
-                "chubby jewish boy dreams of one day being next apatow muse"]
+    sentence = ["obama visits arlington national cemetery to honor veterans",
+            "why writers must plan to be surprise",
+            "gillian jacobs on what it's like to kiss adam brody",
+            "rescuers heroically help beached garbage back into ocean",
+            "christian bale visits sikh temple victims",
+            "brita-unveils-new-in-throat-water-filters"]
     tokenizer.fit_on_texts(sentence)
     sequences = tokenizer.texts_to_sequences(sentence)
 
